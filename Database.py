@@ -1,6 +1,8 @@
+import psycopg
 from sqlalchemy.orm import Session, sessionmaker
-from sqlalchemy import URL, create_engine, text
+from sqlalchemy import create_engine
 from config import settings
+
 
 engine = create_engine(
     url=settings.DATABASE_URL_psycopg,
@@ -9,4 +11,4 @@ engine = create_engine(
     # max_overflow=10 # additional connections
 )
 
-session_factory = sessionmaker(engine)
+session_factory = sessionmaker(bind=engine)

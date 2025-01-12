@@ -1,9 +1,7 @@
-import os # import os for os.getenv() function
-from Database import session_factory
+from Database import session_factory, engine
 from openai import OpenAI
-from flask import request, Flask # import Flask class to create web application
-from dotenv import load_dotenv # import load_dotenv for loading variables from .env
-from Models import Questions_Answers
+from flask import request, Flask, jsonify  # import Flask class to create web application
+from Models import Questions_Answers, Base
 from config import settings
 
 
@@ -12,6 +10,8 @@ app = Flask(__name__) # creates an instance of the Flask class
 app.config[
     'SQLALCHEMY_DATABASE_URI'] = settings.DATABASE_URL_psycopg
 
+with app.app_context():
+    Base.metadata.create_all(engine)
 
 @app.route("/ask", methods=['POST']) # define url-endpoint that only handles POST requests
 def ask():
@@ -35,6 +35,7 @@ def ask():
         session.add(new_question)
         session.commit()
 
+    return jsonify({"question": ques, "answer": answ}), 200
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port='5000', host='127.0.0.1')
