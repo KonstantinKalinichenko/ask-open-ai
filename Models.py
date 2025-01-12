@@ -1,10 +1,11 @@
-from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase
+from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase, MappedAsDataclass
 
-class Base(DeclarativeBase): # base class for model
+class Base(DeclarativeBase, MappedAsDataclass): # base class for model
     pass
 
 
-class Qna(Base): # model sets table name automatically instead of needing __tablename__
-    id: Mapped[int] = mapped_column(primary_key=True) # ID will be the PK
-    question: Mapped[str] = mapped_column(nullable=False)
-    answer: Mapped[str] = mapped_column(nullabe=False)
+class Questions_Answers(Base):
+    __tablename__ = 'Qna'
+    id: Mapped[int] = mapped_column(primary_key=True) # unique ID column
+    question: Mapped[str] = mapped_column(nullable=False) # question column
+    answer: Mapped[str] = mapped_column(nullabe=False) # answer column
