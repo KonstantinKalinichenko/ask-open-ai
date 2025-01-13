@@ -14,6 +14,15 @@ The entire application, including the Flask server and PostgreSQL database, is c
 - Alembic
 - pytest
 - GitHub
+- pydantic
 
 **Project Status:**
 In Development
+
+**Documentation and materials I used:**
+1. https://flask.palletsprojects.com/en/stable/
+2. https://docs.sqlalchemy.org/en/20/index.html
+3. https://platform.openai.com/docs/api-reference/introduction
+4. https://github.com/psycopg/psycopg2/issues/1282
+5. https://github.com/openai/openai-python
+6. https://www.psycopg.org/psycopg3/docs/index.html
