@@ -26,3 +26,4 @@ In Development
 4. https://github.com/psycopg/psycopg2/issues/1282
 5. https://github.com/openai/openai-python
 6. https://www.psycopg.org/psycopg3/docs/index.html
+7. https://alembic.sqlalchemy.org/en/latest/index.html
