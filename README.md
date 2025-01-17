@@ -27,3 +27,6 @@ In Development
 5. https://github.com/openai/openai-python
 6. https://www.psycopg.org/psycopg3/docs/index.html
 7. https://alembic.sqlalchemy.org/en/latest/index.html
+8. https://www.youtube.com/watch?v=SD6_EPg0Aqk&list=PLeLN0qH0-mCXARD_K-USF2wHctxzEVp40&index=13
+9. https://www.youtube.com/watch?v=YBy98X6aExA&list=PLN0sMOjX-lm5Pz5EeX1rb3yilzMNT6qLM&index=10
+10. https://docs.docker.com/reference/dockerfile/
